@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.20657945, g: 0.37161914, b: 0.47760534, a: 1}
+  m_IndirectSpecularColor: {r: 0.20657969, g: 0.37161973, b: 0.4776066, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -903,7 +903,7 @@ MonoBehaviour:
   placeablePrefab:
   - {fileID: 5362703163801593760, guid: ea7c78cce37c5d948a7439b6276cdc6c, type: 3}
   - {fileID: 1789327328587515367, guid: 9b29798f9d2091a4ca349dcab651c542, type: 3}
-  - {fileID: 5442234073439923618, guid: 8c7b06a4dbda8df47a3ed2fe2d7b3fd8, type: 3}
+  - {fileID: 2241453872921002280, guid: 109f568d8dfa09d4f9c9e6cc48279951, type: 3}
   - {fileID: 3065200558288451178, guid: bfe6fd2cdd6b8724cac77eeb61c28e2e, type: 3}
   placeablePlatform:
   - {fileID: 2961266886780543619, guid: b5a9560ea665ef7499aab7e8e9e7a713, type: 3}
@@ -4561,10 +4561,9 @@ MonoBehaviour:
     objDescription: Character from the popular game 'Among Us'. Comes with a brief
       description
     icon: {fileID: 21300000, guid: e5867847cec4cf846b69f67042842d09, type: 3}
-  - objName: Cat
-    objDescription: Cat from the massively popular AR game, AR Pocket Pet. Created
-      by acclaimed developer Adam Stephenson
-    icon: {fileID: 21300000, guid: 3bf769528f85d8c49b4c63cf0226bdeb, type: 3}
+  - objName: Sticks
+    objDescription: Two red and white sticks
+    icon: {fileID: 21300000, guid: 676ea51d16fa92e43a3bdb0d12e894b1, type: 3}
   - objName: Bag
     objDescription: Bag, scanned with kinect v2 as tester
     icon: {fileID: 21300000, guid: 8ea3d95844e47bf4182ff1c03d090ac6, type: 3}
