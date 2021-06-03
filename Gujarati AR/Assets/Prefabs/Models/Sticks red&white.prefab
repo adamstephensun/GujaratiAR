@@ -76,7 +76,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: aadc77f9aeb82a84298e004cd7638e33, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: aadc77f9aeb82a84298e004cd7638e33, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -111,12 +112,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00022581
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.60218
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
@@ -201,12 +202,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00090696
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.60218
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cfe184e8527ab34391a439e88cbe0a4,
         type: 3}
