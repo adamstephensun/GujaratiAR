@@ -41,6 +41,7 @@ public class SpawnObjectOnPlane : MonoBehaviour
         raycastManager = GetComponent<ARRaycastManager>();
         prefabID = 0;
         platformID = 0;
+        currentPlatText.text = "Platform: None";
         canPlace = true;
     }
 
@@ -82,12 +83,6 @@ public class SpawnObjectOnPlane : MonoBehaviour
         currentModelDebugText.text = "Model ID:" + id + "/n PrefabCount:"+placeablePrefab.Count;
     }
 
-    public void ChangeCurrentPlatform(int id)           //Change the current selected platform
-    {
-        platformID = id;
-        Debug.Log("Platform ID set to: " + id);
-    }
-
     public void ChangePlat(bool val)
     {
         if (val) platformID++;
@@ -97,14 +92,31 @@ public class SpawnObjectOnPlane : MonoBehaviour
 
         if (platformID > placeablePlatform.Count -1 ) platformID = 0;   //if id is over max, cycle to beginning of list
 
-        currentPlatText.text = platformID.ToString();
+        switch(platformID)
+        {
+            case 0: //No platform
+                currentPlatText.text = "Platform: None";
+                break;
+            case 1: //red 
+                currentPlatText.text = "Platform: Red";
+                break;
+            case 2: //green
+                currentPlatText.text = "Platform: Green";
+                break;
+            case 3: //yellow
+                currentPlatText.text = "Platform: Yellow";
+                break;
+            default:
+                break;
+        }
+        
     }
 
     private void SpawnPrefab(Pose hitPose)
     {
         Quaternion newAngle = hitPose.rotation * Quaternion.Euler(Vector3.up * 180);    //Rotates objects 180 degrees to face the camera
 
-        if(prefabID <= placeablePrefab.Count && platformID <= placedPlatformList.Count)    //Check if the ID is out of range
+        if(prefabID < placeablePrefab.Count && platformID < placeablePlatform.Count)    //Check if the ID is out of range
         {
             spawnedPlatform = Instantiate(placeablePlatform[platformID], hitPose.position, newAngle);           //Spawn the current platform on the raycast hit
             Vector3 spawn = spawnedPlatform.GetComponent<Platform>().getSpawnPosition();                        //Get the spawn point on the platform
@@ -114,7 +126,7 @@ public class SpawnObjectOnPlane : MonoBehaviour
         {
             spawnedPlatform = Instantiate(placeablePlatform[0], hitPose.position, newAngle);                    //Spawn the default platform on the raycast hit
             Vector3 spawn = spawnedPlatform.GetComponent<Platform>().getSpawnPosition();                        //Get the spawn point on the platform
-            spawnedObject = Instantiate(placeablePrefab[2], spawn, spawnedPlatform.transform.rotation);         //Spawn the default object on the platform
+            spawnedObject = Instantiate(placeablePrefab[3], spawn, spawnedPlatform.transform.rotation);         //Spawn the default object on the platform
         }
         placedPrefabList.Add(spawnedObject);        //Add the prefab to the list of prefabs
         placedPlatformList.Add(spawnedPlatform);    //Add the platform to the list of platforms

@@ -10,8 +10,8 @@ public class ObjectManager : MonoBehaviour      //Manages object selection menus
     private TextMeshProUGUI objName;            //The name of the object
     private TextMeshProUGUI description;        //Object description
     private Image image;                        //Thumbnail for the object
-    [SerializeField] private InGameMenuManager menuController;   //Reference to the menu manager. Used to close the menu when a user selects an object
-    [SerializeField] private SpawnObjectOnPlane objSpawner;      //Reference to the AR object spawner. Used to change the current selected object
+    public InGameMenuManager menuController;   //Reference to the menu manager. Used to close the menu when a user selects an object
+    public SpawnObjectOnPlane objSpawner;      //Reference to the AR object spawner. Used to change the current selected object
 
     [SerializeField]
     private GameObject objButtons;              //UI buttons from the obj select screen
@@ -48,7 +48,7 @@ public class ObjectManager : MonoBehaviour      //Manages object selection menus
 
     public void OpenObjDetails(int id)      //Opens the object detail screen
     {
-        if(id <= objects.Length) {      //Checks that the passed id is valid
+        if(id < objects.Length) {      //Checks that the passed id is valid
             Debug.Log("OBJdetails opened:  ID = " + id+ "   name = "+objects[id].objName);
             OpenDetailsMenu(true);                                     //Opens the menu
 
@@ -64,6 +64,7 @@ public class ObjectManager : MonoBehaviour      //Manages object selection menus
     {
         objSpawner.ChangeCurrentPrefab(currentID);      //Changes the chosen prefab AR spawner 
         Debug.Log("Using prefab ID: " + currentID);
+
         OpenDetailsMenu(false);                                //Closes all menus
         menuController.OpenObjMenu(false);              
     }
