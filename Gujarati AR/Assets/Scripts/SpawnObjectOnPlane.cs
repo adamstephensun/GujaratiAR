@@ -5,11 +5,11 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(ARRaycastManager))]
 public class SpawnObjectOnPlane : MonoBehaviour
 {
-
     private ARRaycastManager raycastManager;
 
     private GameObject spawnedObject;
@@ -34,6 +34,7 @@ public class SpawnObjectOnPlane : MonoBehaviour
 
     public Text debugText;
     public Text currentModelDebugText;
+    public TextMeshProUGUI currentPlatText;
 
     private void Awake()
     {
@@ -92,9 +93,11 @@ public class SpawnObjectOnPlane : MonoBehaviour
         if (val) platformID++;
         else platformID--;
 
-        if (platformID < 0) platformID = placeablePlatform.Count;   //If id is under 0, cycle to the end of the list
+        if (platformID < 0) platformID = placeablePlatform.Count - 1;   //If id is under 0, cycle to the end of the list
 
-        if (platformID > placeablePlatform.Count) platformID = 0;   //if id is over max, cycle to beginning of list
+        if (platformID > placeablePlatform.Count -1 ) platformID = 0;   //if id is over max, cycle to beginning of list
+
+        currentPlatText.text = platformID.ToString();
     }
 
     private void SpawnPrefab(Pose hitPose)
