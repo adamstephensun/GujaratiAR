@@ -23,6 +23,11 @@ public class ObjectManager : MonoBehaviour      //Manages object selection menus
 
     public Object[] objects;                    //Array of object details
 
+    private TextMeshProUGUI obj0Text;
+    private TextMeshProUGUI obj1Text;
+    private TextMeshProUGUI obj2Text;
+    private TextMeshProUGUI obj3Text;
+
     void Start()
     {
         objName = GameObject.Find("ObjName").GetComponent<TextMeshProUGUI>();
@@ -30,10 +35,20 @@ public class ObjectManager : MonoBehaviour      //Manages object selection menus
         image = GameObject.Find("ObjImage").GetComponent<Image>();
         buttons = GameObject.Find("ObjDetailButtons");
 
+        obj0Text = GameObject.Find("obj0Text").GetComponent<TextMeshProUGUI>();
+        obj1Text = GameObject.Find("obj1Text").GetComponent<TextMeshProUGUI>();
+        obj2Text = GameObject.Find("obj2Text").GetComponent<TextMeshProUGUI>();
+        obj3Text = GameObject.Find("obj3Text").GetComponent<TextMeshProUGUI>();
+
+        obj0Text.text = objects[0].objName;
+        obj1Text.text = objects[1].objName;
+        obj2Text.text = objects[2].objName;
+        obj3Text.text = objects[3].objName;
+
         OpenMenu(false);
     }
 
-    public void OpenObjDetails(int id)      //Opens the object detail scren
+    public void OpenObjDetails(int id)      //Opens the object detail screen
     {
         if(id <= objects.Length) {      //Checks that the passed id is valid
             Debug.Log("OBJdetails opened:  ID = " + id+ "   name = "+objects[id].objName);

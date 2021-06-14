@@ -87,6 +87,16 @@ public class SpawnObjectOnPlane : MonoBehaviour
         Debug.Log("Platform ID set to: " + id);
     }
 
+    public void ChangePlat(bool val)
+    {
+        if (val) platformID++;
+        else platformID--;
+
+        if (platformID < 0) platformID = placeablePlatform.Count;   //If id is under 0, cycle to the end of the list
+
+        if (platformID > placeablePlatform.Count) platformID = 0;   //if id is over max, cycle to beginning of list
+    }
+
     private void SpawnPrefab(Pose hitPose)
     {
         Quaternion newAngle = hitPose.rotation * Quaternion.Euler(Vector3.up * 180);    //Rotates objects 180 degrees to face the camera
