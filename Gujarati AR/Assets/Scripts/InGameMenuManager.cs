@@ -17,8 +17,7 @@ public class InGameMenuManager : MonoBehaviour
     private static string sceneTransEnter = "SceneTransEnter";
     private static string sceneTransExit = "SceneTransExit";
 
-    public GameObject planeVisualiser;
-    private bool isPlaneVisible;
+    public Animator helpAnim;
 
     private void Awake()
     {
@@ -34,9 +33,6 @@ public class InGameMenuManager : MonoBehaviour
         pauseMenu.SetActive(false);
         objectMenu.SetActive(false);
         lightMenu.SetActive(false);
-
-        sceneTransAnimation.Play(sceneTransEnter);
-        isPlaneVisible = true;
         
     }
 
@@ -80,24 +76,13 @@ public class InGameMenuManager : MonoBehaviour
         buttons.SetActive(val);
     }
 
-    public void TogglePlaneVisualisation()
-    {
-        if(isPlaneVisible)
-        {
-            isPlaneVisible = false;
-            planeVisualiser.GetComponent<MeshRenderer>().enabled = isPlaneVisible;
-            planeVisualiser.GetComponent<LineRenderer>().enabled = isPlaneVisible;
-        }
-        else
-        {
-            isPlaneVisible = true;
-            planeVisualiser.GetComponent<MeshRenderer>().enabled = isPlaneVisible;
-            planeVisualiser.GetComponent<LineRenderer>().enabled = isPlaneVisible;
-        }
-    }
-
     public void PlaySound(AudioClip clip)
     {
         AudioSource.PlayClipAtPoint(clip, transform.position);
+    }
+
+    public void PlayHelp()
+    {
+        helpAnim.SetTrigger("Reset");
     }
 }

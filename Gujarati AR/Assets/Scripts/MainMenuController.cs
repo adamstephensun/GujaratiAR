@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     private GameObject infoMenu;
+    private GameObject creditsMenu;
     private GameObject settingsMenu;
     private GameObject mainMenu;
     private GameObject quitConfirmMenu;
@@ -21,6 +22,7 @@ public class MainMenuController : MonoBehaviour
     private void Awake()
     {
         infoMenu = GameObject.Find("InfoMenu");
+        creditsMenu = GameObject.Find("CreditsMenu");
         settingsMenu = GameObject.Find("SettingsMenu");
         mainMenu = GameObject.Find("MainMenu");
         quitConfirmMenu = GameObject.Find("QuitConfirm");
@@ -30,6 +32,7 @@ public class MainMenuController : MonoBehaviour
         
         mainMenu.SetActive(true);
         infoMenu.SetActive(false);
+        creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         quitConfirmMenu.SetActive(false);
 
@@ -53,6 +56,17 @@ public class MainMenuController : MonoBehaviour
     {
         infoMenu.SetActive(val);
         mainMenu.SetActive(!val);
+    }
+
+    public void OpenCredits(bool val)
+    {
+        infoMenu.SetActive(!val);
+        creditsMenu.SetActive(val);
+    }
+
+    public void CloseCredits()
+    {
+        creditsMenu.SetActive(false);
     }
 
     public void OpenSettings(bool val)
