@@ -84,13 +84,13 @@ public class InGameMenuManager : MonoBehaviour
     {
         if(isPlaneVisible)
         {
-            planeVisualiser.SetVisible(false);
             isPlaneVisible = false;
+            planeVisualiser.enabled = isPlaneVisible;
         }
         else
         {
-            planeVisualiser.SetVisible(true);
             isPlaneVisible = true;
+            planeVisualiser.enabled = isPlaneVisible;
         }
     }
 }
