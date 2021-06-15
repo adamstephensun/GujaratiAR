@@ -64,7 +64,6 @@ public class MainMenuController : MonoBehaviour
     public void OpenQuitConfirmMenu(bool val)
     {
         quitConfirmMenu.SetActive(val);
-        //mainMenu.SetActive(!val);
     }
 
     public void MusicVolChanged()
@@ -76,5 +75,10 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Quit game");
         Application.Quit();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        AudioSource.PlayClipAtPoint(clip, transform.position);
     }
 }

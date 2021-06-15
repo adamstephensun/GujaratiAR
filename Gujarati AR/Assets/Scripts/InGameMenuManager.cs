@@ -20,21 +20,6 @@ public class InGameMenuManager : MonoBehaviour
     public GameObject planeVisualiser;
     private bool isPlaneVisible;
 
-    public AudioClip uiClick1;
-    public AudioClip uiClick2;
-    public AudioClip uiConfirm;
-    public AudioClip uiBleep;
-    public AudioClip uiPop;
-
-    public enum Clips
-    {
-        click1,
-        click2,
-        confirm,
-        bleep,
-        pop
-    }
-
     private void Awake()
     {
         pauseMenu = GameObject.Find("PauseMenu");
@@ -114,23 +99,5 @@ public class InGameMenuManager : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         AudioSource.PlayClipAtPoint(clip, transform.position);
-        /*switch(clip)
-        {
-            case Clips.click1:
-                AudioSource.PlayClipAtPoint(uiClick1, transform.position);
-                break;
-            case Clips.click2:
-                AudioSource.PlayClipAtPoint(uiClick2, transform.position);
-                break;
-            case Clips.confirm:
-                AudioSource.PlayClipAtPoint(uiConfirm, transform.position);
-                break;
-            case Clips.bleep:
-                AudioSource.PlayClipAtPoint(uiBleep, transform.position);
-                break;
-            case Clips.pop:
-                AudioSource.PlayClipAtPoint(uiPop, transform.position);
-                break;
-        }*/
     }
 }
