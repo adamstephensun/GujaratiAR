@@ -93,6 +93,6 @@ public class MainMenuController : MonoBehaviour
 
     public void PlaySound(AudioClip clip)
     {
-        AudioSource.PlayClipAtPoint(clip, transform.position);
+        AudioSource.PlayClipAtPoint(clip, GameObject.Find("Main Camera").transform.position);
     }
 }

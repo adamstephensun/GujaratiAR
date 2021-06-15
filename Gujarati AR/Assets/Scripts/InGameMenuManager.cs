@@ -78,7 +78,7 @@ public class InGameMenuManager : MonoBehaviour
 
     public void PlaySound(AudioClip clip)
     {
-        AudioSource.PlayClipAtPoint(clip, transform.position);
+        AudioSource.PlayClipAtPoint(clip, GameObject.Find("AR Camera").transform.position);
     }
 
     public void PlayHelp()
