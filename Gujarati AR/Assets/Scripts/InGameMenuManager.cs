@@ -17,7 +17,7 @@ public class InGameMenuManager : MonoBehaviour
     private static string sceneTransEnter = "SceneTransEnter";
     private static string sceneTransExit = "SceneTransExit";
 
-    public ARPlaneMeshVisualizer planeVisualiser;
+    public GameObject planeVisualiser;
     private bool isPlaneVisible;
 
     private void Awake()
@@ -85,12 +85,14 @@ public class InGameMenuManager : MonoBehaviour
         if(isPlaneVisible)
         {
             isPlaneVisible = false;
-            planeVisualiser.enabled = isPlaneVisible;
+            planeVisualiser.GetComponent<MeshRenderer>().enabled = isPlaneVisible;
+            planeVisualiser.GetComponent<LineRenderer>().enabled = isPlaneVisible;
         }
         else
         {
             isPlaneVisible = true;
-            planeVisualiser.enabled = isPlaneVisible;
+            planeVisualiser.GetComponent<MeshRenderer>().enabled = isPlaneVisible;
+            planeVisualiser.GetComponent<LineRenderer>().enabled = isPlaneVisible;
         }
     }
 }
