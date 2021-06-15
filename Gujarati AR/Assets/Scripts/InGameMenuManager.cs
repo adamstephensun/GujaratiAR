@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.ARFoundation;
 
 public class InGameMenuManager : MonoBehaviour
 {
@@ -16,6 +16,9 @@ public class InGameMenuManager : MonoBehaviour
 
     private static string sceneTransEnter = "SceneTransEnter";
     private static string sceneTransExit = "SceneTransExit";
+
+    public ARPlaneMeshVisualizer planeVisualiser;
+    private bool isPlaneVisible;
 
     private void Awake()
     {
@@ -33,6 +36,8 @@ public class InGameMenuManager : MonoBehaviour
         lightMenu.SetActive(false);
 
         sceneTransAnimation.Play(sceneTransEnter);
+        isPlaneVisible = true;
+        
     }
 
     public void QuitGame()          //Closes the game
@@ -73,5 +78,19 @@ public class InGameMenuManager : MonoBehaviour
     public void ShowButtons(bool val)       //Toggle the UI buttons
     {
         buttons.SetActive(val);
+    }
+
+    public void TogglePlaneVisualisation()
+    {
+        if(isPlaneVisible)
+        {
+            planeVisualiser.SetVisible(false);
+            isPlaneVisible = false;
+        }
+        else
+        {
+            planeVisualiser.SetVisible(true);
+            isPlaneVisible = true;
+        }
     }
 }
