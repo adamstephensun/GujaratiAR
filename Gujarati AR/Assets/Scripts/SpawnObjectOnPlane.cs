@@ -32,9 +32,9 @@ public class SpawnObjectOnPlane : MonoBehaviour
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();            //List of raycast hits
 
-    public Text debugText;
-    public Text currentModelDebugText;
     public TextMeshProUGUI currentPlatText;
+
+    public AudioClip popClip;
 
     private void Awake()
     {
@@ -80,7 +80,6 @@ public class SpawnObjectOnPlane : MonoBehaviour
     {
         prefabID = id;
         Debug.Log("Prefab ID set to: " + id);
-        currentModelDebugText.text = "Model ID:" + id + "/n PrefabCount:"+placeablePrefab.Count;
     }
 
     public void ChangePlat(bool val)
@@ -131,6 +130,8 @@ public class SpawnObjectOnPlane : MonoBehaviour
         placedPrefabList.Add(spawnedObject);        //Add the prefab to the list of prefabs
         placedPlatformList.Add(spawnedPlatform);    //Add the platform to the list of platforms
         placedPrefabCount++;                        //Increment the count of current prefabs
+
+        AudioSource.PlayClipAtPoint(popClip, spawnedObject.transform.position);
     }
 
     public void CanPlace(bool val)      //Determines if the user can place objects
@@ -155,6 +156,5 @@ public class SpawnObjectOnPlane : MonoBehaviour
         Destroy(placedPrefabList[placedPrefabList.Count]);
         placedPrefabCount--;
         string debugString = "Count: " + placedPrefabCount;
-        debugText.text = debugString;
     }
 }
