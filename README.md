@@ -1,8 +1,28 @@
-# GujaratiAR
-Mobile AR project built in Unity 2019 for the Nupur Arts Organisation
+# Gujarati AR
+
+Mobile Android AR project built in Unity 2019 for the Nupur Arts Organisation
+
+## Description
 
 Allows you to place 3D scanned Gujarati heritage artifacts in your room using AR.
 
-Created in collaboration with Irina Tsokova from https://irdtdesign.com/.
+## Installation
 
-https://www.adam-stephenson.co.uk/
+Simply download the latest .apk from the Builds folder and install on your Android phone. Be sure to allow app installation from unknown sources.
+
+Requires Android 8.0 'Oreo' minimum (API level 26).
+
+## Help
+
+Please contact me if you require any technical assistance with the app.
+
+## Authors
+
+Adam Stephenson - https://www.adam-stephenson.co.uk/
+
+Irina Tsokova - https://irdtdesign.com/
+
+## Version History
+
+* 0.1
+    * Initial Release
