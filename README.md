@@ -17,6 +17,7 @@ Please contact me if you require any technical assistance with the app.
 ## Authors
 
 Adam Stephenson - https://www.adam-stephenson.co.uk/
+
 Irina Tsokova - https://irdtdesign.com/
 
 ## Version History
