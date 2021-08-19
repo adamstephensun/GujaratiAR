@@ -10,6 +10,8 @@ Allows you to place 3D scanned Gujarati heritage artifacts in your room using AR
 
 Simply download the latest .apk from the Builds folder and install on your Android phone. Be sure to allow app installation from unknown sources.
 
+Requires Android 8.0 'Oreo' minimum (API level 26).
+
 ## Help
 
 Please contact me if you require any technical assistance with the app.
